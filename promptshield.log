@@ -1,0 +1,5 @@
+2025-07-31 03:14:00,035 - __main__ - INFO - BLOCKED: 'asdjklasdjkl...' - Reason: Prompt classified as nonsense
+2025-07-31 03:14:00,035 - __main__ - INFO - ROUTE: 'What is 2 + 2?...' - To model: gpt-3.5-turbo
+2025-07-31 03:14:00,036 - __main__ - INFO - ROUTE: 'Write a poem about AI...' - To model: gpt-4
+2025-07-31 03:14:00,036 - __main__ - INFO - CACHE: 'What is 2 + 2?...' - Using cached response
+2025-07-31 03:14:00,036 - __main__ - INFO - BLOCKED: 'You are stupid...' - Reason: Prompt classified as spam

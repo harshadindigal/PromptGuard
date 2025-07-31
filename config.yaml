@@ -1,0 +1,35 @@
+routing:
+  rules:
+    - if: "label == 'nonsense' or label == 'spam'"
+      action: "block"
+    - if: "label == 'repeat'"
+      action: "cache"
+    - if: "label == 'low_cost'"
+      model: "cheap_model"
+    - if: "label == 'valuable'"
+      model: "default_model"
+
+models:
+  openai:
+    default_model: "gpt-4"
+    cheap_model: "gpt-3.5-turbo"
+  ollama:
+    default_model: "llama3-70b"
+    cheap_model: "mistral-instruct"
+  anthropic:
+    default_model: "claude-v1"
+    cheap_model: "claude-haiku"
+  vllm:
+    default_model: "llama3-70b"
+    cheap_model: "mistral-instruct"
+
+cache:
+  type: "memory"  # Options: memory, redis
+  ttl: 600  # Time to live in seconds (10 minutes)
+  max_size: 1000  # Maximum number of entries in memory cache
+
+classifier:
+  use_ml_model: true
+  model_name: "distilbert-base-uncased"
+  min_words: 4  # Block if prompt length < min_words
+  confidence_threshold: 0.7  # Minimum confidence for classification
